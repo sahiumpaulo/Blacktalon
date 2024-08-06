@@ -1,2 +1,2 @@
-# Blacktalon
+# Blacktalon guide
 Blacktalon guide
