@@ -1,0 +1,14 @@
+body {
+
+}
+
+.input-item {
+    padding-bottom: 10px;
+}
+
+.cute-icon {
+    background: url('../icons/knife.png');
+    height: 24px;
+    width: 24px;
+    /* display: block; */
+  }

@@ -1,0 +1,230 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'global_side_bar.css' %}">
+<link rel="stylesheet" href="{% static 'table-style.css' %}">
+<link rel="stylesheet" href="{% static 'custom-style.css' %}">
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<style>
+  body {background: #727272;}
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>Black talon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <!-- <script src="{% static 'global_side_bar_buttons.js' %}"></script> -->
+  <script>
+    function expand_btn_clk() {
+      const expand_btn = document.querySelector(".expand-btn");
+
+      let activeIndex;
+      
+      document.body.classList.toggle("collapsed");
+      
+      const current = window.location.href;
+      
+      const allLinks = document.querySelectorAll(".sidebar-links a");
+      
+      allLinks.forEach((elem) => {
+        elem.addEventListener("click", function () {
+          const hrefLinkClick = elem.href;
+      
+          allLinks.forEach((link) => {
+            if (link.href == hrefLinkClick) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        });
+      });
+      
+      const searchInput = document.querySelector(".search__wrapper input");
+      
+      searchInput.addEventListener("focus", (e) => {
+        document.body.classList.remove("collapsed");
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="main-container">
+    <nav class="sidebar">
+      <div class="sidebar-top-wrapper">
+        <div class="sidebar-top">
+          <a href="/" class="logo__wrapper">
+            <img src="assets/astra.svg" alt="Logo" class="logo-small">
+            <span class="hide">
+              Black Talon
+            </span>
+          </a>
+        </div>
+        <div class="expand-btn" onclick="expand_btn_clk()">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.00979 2.72L10.3565 7.06667C10.8698 7.58 10.8698 8.42 10.3565 8.93333L6.00979 13.28"
+              stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      
+
+      <div class="sidebar-links">
+        <ul>
+          <li>
+            <a href="/" title="Home" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 0 8 l 12 -6 l 12 6' />
+                <path d='M 6 5 V22' />
+                <path d='M 18 5 V22' />
+              </svg>
+              <span class="link hide">Inicio</span>
+              <span class="tooltip__content">Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="/storyline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" >
+                <g transform="matrix(0.46,0,0,0.46,-38,-43)">
+                  <path d="m 89.764726,114.95051 -0.129159,15.24063 9.428528,4.77884 -0.258318,-16.40305 z" />
+                  <path d="m 89.635567,114.82135 c 0,0 3.800925,-8.84621 7.651439,-12.2291 8.191474,-7.196686 15.596984,-5.465525 15.596984,-5.465525" />
+                  <path d="m 91.115042,115.37151 c 0,0 3.800925,-8.84621 7.651439,-12.2291 8.191479,-7.196691 13.917929,-5.853006 13.917929,-5.853006" />
+                  <path d="m 89.764725,120.5043 c -3.425449,3.84668 -6.9716,8.93007 -7.032182,12.01309 -0.169309,8.61614 11.870356,14.54041 22.276637,12.55526 2.98118,-0.56871 5.86761,-4.32875 8.92034,-5.24501 1.58243,-0.47496 3.38946,-1.96792 5.55108,-3.29215 3.25508,-1.99409 7.11596,-3.70925 9.4875,-5.28928 2.10166,-1.40022 3.17932,-3.08793 4.93155,-4.92811 3.2153,-3.37668 -1.87386,-7.28879 -1.25451,-7.49285" />
+                  <path d="m 93.25199,115.85462 0.129156,-2.19569 1.679054,0.77495 0.129156,2.454" />
+                  <path d="m 93.122831,113.78809 c 7.154359,-12.18535 15.504599,-17.874687 25.704229,-15.891346 0.97847,0.190266 2.65737,1.42014 3.61461,1.942297" />
+                  <path d="M 94.931041,114.17557 C 104.08301,99.74262 114.83048,93.731336 122.18335,99.839041" />
+                  <path d="M 95.447672,116.75872 C 104.99829,102.02999 113.67672,96.069485 122.31251,99.580725" />
+                  <path d="m 122.0542,99.709882 c 6.34015,3.641688 11.10912,11.771668 10.46178,19.115368" />
+                  <path d="m 98.805777,134.71167 c 22.454883,8.06446 38.760903,-12.66694 35.130943,-13.56158" />
+                  <path d="m 99.193251,128.25377 c 1.741279,-13.01589 14.616069,-25.77435 26.089889,-25.96073" />
+                  <path d="m 98.805777,118.69609 c 7.150303,-9.63307 15.285283,-16.31213 25.185783,-17.69463" />
+                  <path d="M 97.5142,117.79199 C 109.47379,98.460829 119.22065,100.67545 122.57083,99.9682" />
+                </g>
+              </svg>
+              <span class="link hide">Storyline</span>
+              {% comment %} <span class="tooltip__content">Servicos</span> {% endcomment %}
+            </a>
+          </li>
+          <li>
+            <a href="/quests" title="Quests" class="tooltip">
+              <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" >
+                <path d='M 9 23 A 11 11 0 1 1 15 23 V14 H20 L 12 3 L 4 14 H9 Z' />
+              </svg>
+              <span class="link hide">Quests</span>
+              <span class="tooltip__content">Quests</span>
+            </a>
+          </li>
+          <li>
+            <a href="/dungeons" title="Dungeons" class="tooltip">
+              {% comment %} <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg> {% endcomment %}
+              <img src="icons/knife.png">
+              <span class="link hide">Dungeons</span>
+              <span class="tooltip__content">Dungeons</span>
+            </a>
+          </li>
+          <li>
+            <a href="/huntinggrounds" title="Hunting grounds" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Hunting grounds</span>
+              <span class="tooltip__content">Hunting grounds</span>
+            </a>
+          </li>
+          <li>
+            <a href="/gathering" title="Gathering" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Gathering</span>
+              <span class="tooltip__content">Gathering</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Tower" title="Tower" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Tower</span>
+              <span class="tooltip__content">Tower</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cosmetics" title="Cosmetics" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Cosmetics</span>
+              <span class="tooltip__content">Cosmetics</span>
+            </a>
+          </li>
+          <li>
+            <a href="/raids" title="Raids" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Raids</span>
+              <span class="tooltip__content">Raids</span>
+            </a>
+          </li>
+          <li>
+            <a href="/relics" title="Relics" class="tooltip">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-dashboard" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d='M 1 9 A 11 11 0 1 1 1 15 H10 V20 L 21 12 L 10 4 V9 Z' />
+              </svg>
+              <span class="link hide">Relics</span>
+              <span class="tooltip__content">Relics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <nav class="content-box">
+      <head>
+        <title>
+          {% block title %}
+          {% endblock %}
+        </title>
+      </head>
+
+      <body>
+        {% block content %}
+        {% endblock %}
+      </body>
+    </nav>
+
+  </nav>
+  <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

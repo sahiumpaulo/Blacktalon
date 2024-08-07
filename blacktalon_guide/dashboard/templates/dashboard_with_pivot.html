@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    Add tables content
+{% comment %} <head>
+    <meta charset="UTF-8">
+    <title>Dashboard with Flexmonster</title>
+    <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.flexmonster.com/demo.css">
+</head>
+
+<body>
+    <div id="pivot-table-container" data-url="{% url 'pivot_data' %}"></div>
+    <div id="pivot-chart-container"></div>
+</body>
+
+<table>
+    <tr>
+        <th> Field 1</th>
+        <th> Field 2</th>
+    </tr>
+    {% for item in Relics %}
+    <tr>
+        <td> {{ item.name }} </td>
+        <td> {{ item.method }} </td>
+    </tr>
+    {% endfor %}
+</table> {% endcomment %}
+
+{% endblock %}
