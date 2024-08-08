@@ -1,0 +1,128 @@
+# import pandas as pd
+
+# class relics_info():
+    # Define column names
+    # columns = ['mod_type', 'name', 'tier_1', 'tier_2', 'tier_3', 'method']
+
+    # Array of each relic
+    # data = [
+        # ["Strike", "Medusa head", "10", "20", "30", None],
+        # ["Strike", "Sea serpent trophy", "10", "20", "30", None],
+        # ["Strike", "Trapped lightning", "10", "20", "30", None],
+        # ["Strike", "Porcelain Mask", "10", "20", "30", None],
+        # ["Strike", "Dracula's Eye", "10", "20", "30", None],
+        # ["Strike", "Old Scorpion Sceptre", "10", "20", "30", None],
+        # ["Strike", "Ghost Duster", "10", "20", "30", None],
+        # ["Strike", "Thorn Steed Flames", "10", "20", "30", None],
+        # ["Strike", "Percht Skull", "10", "20", "30", None],
+        # ["Strike", "Goshnar's Chest", "10", "20", "30", None],
+        # ["Strike", "Arcomancer Folio", "15", "30", "45", None],
+        # ["Critical chance", "Skull Of a Caveman", "2", "4", "6", None],
+        # ["Critical chance", "Lion;s Heart", "3", "6", "9", None],
+        # ["Critical chance", "Deathstrike Amulet", "3", "6", "9", None],
+        # ["Critical chance", "Demon Bag", "4", "8", "12", None],
+        # ["Critical chance", "Damselfly Wing", "4", "8", "12", None],
+        # ["Critical chance", "Cursed King Torment", "5", "10", "15", None],
+        # ["Critical chance", "Scale From a Frozen Dragon", "5", "10", "15", None],
+        # ["Critical damage", "Vampire Doll", "2", "4", "6", None],
+        # ["Critical damage", "Crawler Column", "4", "8", "12", None],
+        # ["Critical damage", "King Zelos Tool", "5", "10", "15", None],
+        # ["Critical damage", "Nightmare Horn", "5", "10", "15", None],
+        # ["Critical damage", "Nightmare Beacon", "8", "16", "24", None],
+        # ["Critical damage", "Sight of Surrenders Eye", "6", "12", "18", None],
+        # ["Critical damage", "Poor Soul Head", "7", "14", "21", None],
+        # ["Critical damage", "Alptramun's Toothbrush", "11", "22", "33", None],
+        # ["Critical damage", "Bjorn's axe", "9", "18", "27", None],
+        # ["Critical damage", "Crystal Warlord Club", "14", "28", "42", None],
+        # ["Critical damage", "War Crystal", "10", "20", "30", None],
+        # ["Skill", "Incredible Mumpiz Slayer", "5", "10", "15", None],
+        # ["Skill", "Sword Hilt", "9", "18", "27", None],
+        # ["Skill", "Ron The Rippers Sabe", "12", "24", "36", None],
+        # ["Skill", "Mexcalibur", "13", "26", "39", None],
+        # ["Skill", "Mechanical Fish", "16", "32", "48", None],
+        # ["Skill", "Dream Warden Claw", "19", "38", "57", None],
+        # ["Skill", "Arcomancer Regalia", "23", "46", "69", None],
+        # ["HP and MP", "Demodra's Claw", "3", "6", "9", None],
+        # ["HP and MP", "Eye of The Storm", "4", "8", "12", None],
+        # ["HP and MP", "Mini Mummy", "5", "10", "15", None],
+        # ["HP and MP", "Poison Spider Shell", "6", "12", "18", None],
+        # ["HP and MP", "Music in The box", "7", "14", "21", None],
+        # ["HP and MP", "Turtle Shell", "10", "20", "30", None],
+        # ["HP and MP", "Vibrant Robe", "12", "24", "36", None],
+        # ["HP and MP", "Ceiron's Wolf Tooth Chain", "15", "30", "45", None],
+        # ["HP and MP", "Bloodweb's Egg", "15", "30", "45", None],
+        # ["HP and MP", "Frozen Heart", "17", "34", "51", None],
+        # ["Heal", "Shimmer Ball", "4", "8", "12", None],
+        # ["Heal", "Raven Herb", "3", "6", "9", None],
+        # ["Heal", "Soul Stone", "6", "12", "18", None],
+        # ["Heal", "Morgaroth's Heart", "6", "12", "18", None],
+        # ["Heal", "Medusa Shield", "5", "10", "15", None],
+        # ["Heal", "Golden Scorpion Pendant", "8", "16", "24", None],
+        # ["Heal", "Jaul's Pearl", "9", "18", "27", None],
+        # ["Heal", "Mouse Doll", "10", "20", "30", None],
+        # ["Heal", "Celestial Chart", "12", "24", "36", None],
+        # ["Heal", "Rainbow Opal", "12", "24", "36", None],
+        # ["Elite chance", "Famous Golden Bug", "5", None, None, None],
+        # ["Elite chance", "Helmet of The Deep", "10", None, None, None],
+        # ["Elite chance", "Elite Compass", "20", "40", "60", None],
+        # ["Boss loot", "Ferumbras Doll", "20", "40", "60", None],
+        # ["Boss loot", "Golden Pass", "17", "34", "51", None],
+        # ["Atack speed", "Witch Hat", "3", "6", "9", None],
+        # ["Atack speed", "Bunnyslippers", "5", "10", "15", None],
+        # ["Atack speed", "Claw Of The Noxious Spawn", "7", "14", "21", None],
+        # ["Atack speed", "Cluster Of Solace", "10", "20", "30", None],
+        # ["Atack speed", "Trashed Draken Boots", "12", "24", "36", None],
+        # ["Atack speed", "Crawler's Essence", "15", "30", "45", None],
+        # ["Atack speed", "Anduril", "15", "30", "45", None],
+        # ["Atack speed", "Swan Feather", "17", "34", "51", None],
+        # ["Damage", "Avar Tar Medal", "2", "4", "6", None],
+        # ["Damage", "Maxxenius Head", "3", "6", "9", None],
+        # ["Damage", "Necromancy Tome", "4", "8", "12", None],
+        # ["Damage", "Tuning Fork", "5", "10", "15", None],
+        # ["Damage", "Brooks Legendary Guitar", "6", "12", "18", None],
+        # ["Damage", "Ancient Stone", "7", "14", "21", None],
+        # ["Damage", "Golden Falcon", "7", "14", "21", None],
+        # ["Damage", "Terror Impaled", "10", "20", "30", None],
+        # ["Damage", "Ocyakao Amulet", "13", "26", "39", None],
+        # ["Damage", "Ishim Boots", "15", "30", "45", None],
+        # ["Damage", "Ornate Mace", "15", "30", "45", None],
+        # ["Armor", "Shield Of Endless Search", "20", "40", "60", None],
+        # ["Armor", "Behemoth Claw", "25", "50", "75", None],
+        # ["Armor", "Ruined Aragorn Helmet", "30", "60", "90", None],
+        # ["Armor", "Torn Shirt", "35", "70", "105", None],
+        # ["Armor", "Viking Shield", "40", "80", "120", None],
+        # ["Armor", "Warrior's Shield", "50", "100", "150", None],
+        # ["Armor", "Golem Wrench", "50", "100", "150", None],
+        # ["Armor", "Runic Ice Shield", "50", "100", "150", None],
+        # ["Block", "Glass Of Goo", "18", "36", "54", None],
+        # ["Block", "Tyrn Egg", "18", "36", "54", None],
+        # ["Block", "Holy Icon", "18", "36", "54", None],
+        # ["Block", "Sun Mirror", "18", "36", "54", None],
+        # ["Block", "Shadowtorn Spikes", "18", "36", "54", None],
+        # ["Block", "Shimmering Sun", "x", "x", "x", None],
+        # ["Restore", "Egg Of The Many", "25/10", "30/15", "35/20", None],
+        # ["Restore", "Flask Of Anti-Corruption", "25/10", "30/15", "35/20", None],
+        # ["Special", "Pumpkinhead", "12 Hrs CD", "6 Hrs CD", "3 Hrs CD", None],
+        # ["Special", "Brainstealer Brain", "10 dmg/8 Ats", "20 Dmg/16 Ats", "30 dmg/24 Ats", None],
+        # ["Special", "Moon Mirror", "14 dmg/ 18 skill", "28 dmg/36 skill", "42 dmg/54 skill", None],
+        # ["Special", "Frozen Glyph", "10 dmg/20 skill", "20 dmg/40 skill", "30 dmg/60 skill", None],
+        # ["Special", "Spiritthorn Ring", "50 armor/7 HPMP", "100 armor/14 HPMP", "150 armor/21 HPMP", None],
+        # ["Special", "Blue Spectales", "13 cdmg/8 heal", "26 cdmg/16 heal", "39 cdmg/24 heal", None],
+        # ["Special", "The Crown Of The Percht Queen", "12 HPMP/10 heal", "24 HPMP/20 heal", "36 HPMP/30 heal", None],
+        # ["Special", "Turquoise Tendril Lantern", "15 HPMP/14 skill", "30 HPMP/28 skill", "45 HPMP/42 skill", None],
+        # ["Special", "Isfaril Hood", "13 cdmg/15 ats", "26 cdmg/30 ats", "39 cdmg/45 ats", None]
+    # ]
+
+    # relics_data = pd.DataFrame(columns=columns, data=data)
+
+# for row in relics_data:
+#     print(row)
+#     pass
+    # Relics(
+    #     name = row[name]
+    #     mod_type= row[mod_type]
+    #     tier_1 = row[tier_1]
+    #     tier_2 = row[tier_2]
+    #     tier_3 = row[tier_3]
+    #     method = row[method]
+    # ).save()

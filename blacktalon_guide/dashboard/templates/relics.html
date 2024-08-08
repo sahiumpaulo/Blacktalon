@@ -1,5 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-    Add relics content
+    <h1>Relics</h1>
+    <p class="spaced-paragraph">
+        Relics are items that can either give you attributes (skills, dodge, hp, mp, etc.), a modifier (double attack, ice strike attack, etc.)
+        or a GENERAL BENEFIT (boss loot, elite chance, etc.). <br>
+        They can be obtained through different methods, detailed below. <br>
+        Also, their benefits can be upgraded from tier 1 up to tier 3 by using the Chaos Compass.
+    </p>
+
+    <h1 class="table-title">Relics list</h1>
+
+    <form method="get">
+        <label for="relic_list">Modifier type</label> <br>
+        <select name="relic_list">
+            {% for instance in Relics %}
+                <option value=str(instance.mod_type)>str(instance.mod_type)</option>
+            {% endfor %}
+        <input type="submit" name="relic_list" value="Filter">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Tier 1</th>
+                <th>Tier 2</th>
+                <th>Tier 3</th>
+                <th>Method to obtain</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for instance in Relics %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ instance.name }}</td>
+                <td>{{ instance.mod_type }}</td>
+                <td>{{ instance.tier_1 }}</td>
+                <td>{{ instance.tier_2 }}</td>
+                <td>{{ instance.tier_3 }}</td>
+                <td>{{ instance.method }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
