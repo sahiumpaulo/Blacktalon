@@ -12,14 +12,19 @@
     <h1 class="table-title">Relics list</h1>
 
     <form method="get">
-        <label for="relic_list">Modifier type</label> <br>
-        <select name="relic_list">
-            {% for instance in Relics %}
-                <option value=str(instance.mod_type)>str(instance.mod_type)</option>
+        <select name="relics_filter">
+                <option value="All">All</option>
+            {% for instance in Mod_types %}
+                <option value={{ instance.mod_type }}>{{ instance.mod_type }}</option>
             {% endfor %}
-        <input type="submit" name="relic_list" value="Filter">
+        <input type="submit">
+        </select>
     </form>
 
+    {% comment %} <form method="POST">
+        {{ form.name }}
+    </form> {% endcomment %}
+    
     <table>
         <thead>
             <tr>
